@@ -1,0 +1,113 @@
+What is resource Group:  A resource group is a container that holds related resources for an Azure solution.
+
+
+INBOUND PORT RULE:
+
+General Public can connect via port HTTP==> 80
+						HTTPS==>443
+
+
+RDP (Remote Desktop) ===> 3389 (Windows app)
+	SSH==> 22 (Linux)
+==========================================================
+
+how to connect in windows VM
+
+1. Through CONNECT TAB ( Which is available in top)
+2.Through Remote Desktop (RDP) by entering PUBLIC IP ADDRESS.
+
+
+HOW TO CONNECT IN LINUX VM
+1. Through CONNECT TAB ( Which is available in top)
+2.Through command prompt
+ssh userid@publicuser-id
+
+ex: ssh sreeadmin@20.236.24.49
+
+
+HOW CAN I UPGRADE MY VM:
+
+sudo apt update
+
+HOW CAN I DEPLOY AN APPLICATION IN LINUX - VM:
+
+sudo apt install nginx
+=============================================
+
+To edit your html filr use command ==> nano
+ex: sudo nano sree.html
+
+to save and exit ====> CTRL+X
+
+
+===> Use WIN scp software.
+
+
+=> To provide permissions in LINUX
+
+sudo chmod 777 <filename>
+
+read => r - value = 4
+write => w - vaue is = 2
+execute => x - vaues is =1
+
+owner read (r) write (w)  execute (x) => rwx = 4+2+1 =7 or binary 111
+group read (r) 				  => r   = 4+0+0 = 4 or 100
+others read (r) write (w)  execute (x) => rwx
+=============================================================================
+
+STORAGE
+=======
+
+1.REST api:
+
+REST: REPRESENTATION STATE TRANSFER
+api: APPLICATION PROGRAMMING INTERFACE.
+
+USER <==> api  <==> DATABASE
+
+2. BLOB: BINARY LARGE OBJECTES.: WHICH IS A TYPE  OF STORAGE CAN ACCESS BY GENRAL PUBLIC, LIKE MUSIC, VIDEOS , IMAGES ETC
+
+3.SOFT DELETE: MEANS DONT DELETE PERMANENTLY (SHIFT+DELETE). JUST CLICK DELETE , THEN WE CAN GET IT BACK FROM RECYCLE BIN
+
+==============================================================================================================
+
+az commands
+
+===>REGARDING RESOURCE GROUP:
+
+1. vie the list of resource group
+
+az group list -o table
+
+2.How to create the resource group
+
+az group create --name SREE-RG --location EASTUS
+
+3. How to delete the resouce group
+
+az group delete --name SREE-RG
+
+====> REGARDING VIRTUAL MACHINE
+
+1. How to view list Virtual Machine
+
+az vm list -o table
+
+2. How to create VM
+ az vm create -n windows-VM -g windows-RG --image windows --admin-password SreenivasU44@. --admin-username sreeadmin
+
+3. how to delete VM
+
+az vm delete -n windows-VM -g windows-RG
+
+
+
+
+
+
+
+
+
+
+
